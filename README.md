@@ -16,7 +16,7 @@ Para esto, se ejecuta la siguiente ruta: http://localhost:8000/measurements/dele
 En la consulta anterior se puede ver que hay un elemento con pk=3, nótese que ese es el que va a ser eliminado, ya que la ruta devuelve todos los que quedaron:
 ![image](https://user-images.githubusercontent.com/60165572/131187095-4d77c5a3-81fe-44d5-9474-f42659b41e47.png)
 
-4. Actualizar por ID. Saliendo de la lista resultante después de eliminar el de ID 3, se puede ver ahora que vamos a actualizar el de pk, su place a "Ay mi madre, el bicho al United"
+4. Actualizar por ID. Saliendo de la lista resultante después de eliminar el de ID 3, se puede ver ahora que vamos a actualizar el de pk=2, su place a "Ay mi madre, el bicho al United"
 Esto con la siguiente ruta: http://localhost:8000/measurements/editById
 Obteniendo el actualizado, tal como se muestra en la imagen:
 ![image](https://user-images.githubusercontent.com/60165572/131188263-f40e7cc6-4e6f-43f3-903f-ea89d527d94d.png)
