@@ -4,14 +4,16 @@ def get_all_measurements():
     measurements = Measurement.objects.all()
     return measurements
 
-def get_measurement_id(id):
-    measure = Measurement.objects.filter(pk = id)
+def get_measurement_id(pk):
+    measure = Measurement.objects.get(id = pk)
     return measure
 
-def edit_measurement(id):
-    newMeasure = Measurement.objects.filter(pk = id).update(place = 'Ay mi madre, el bicho al United')
-    return newMeasure
+def edit_measurement(pk):
+    measure = Measurement.objects.get(id = pk)
+    measure.place = "Lio the GOAT"
+    measure.save()
+    return measure
 
-def delete_measurement(id):
-    Measurement.objects.filter(pk=id).delete()
+def delete_measurement(pk):
+    Measurement.objects.filter(id=pk).delete()
     

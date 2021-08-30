@@ -13,19 +13,18 @@ def get_measurements(request):
     return HttpResponse(measurements_list, content_type = 'application/json')
 
 # Create your views here.
-def get_measurement_by_id(request):
-    measure = get_measurement_id(1)
-    measure_list = serializers.serialize('json', measure)
+def get_measurement_by_id(request, pk):
+    measure_list = serializers.serialize('json', [get_measurement_id(pk)])
     return HttpResponse(measure_list, content_type = 'application/json')
 
-def edit_measurement_id(request):
-    edit_measurement(1)
-    measure = get_measurement_id(1)
-    measure_list = serializers.serialize('json', measure)
+def edit_measurement_id(request, pk):
+    edit_measurement(pk)
+    measure = get_measurement_id(pk)
+    measure_list = serializers.serialize('json', [get_measurement_id(pk)])
     return HttpResponse(measure_list, content_type = 'application/json')
 
-def delete_measurement_id(request):
-    delete_measurement(4)
+def delete_measurement_id(request, pk):
+    delete_measurement(pk)
     measurements = get_all_measurements()
     measurements_list = serializers.serialize('json', measurements)
     return HttpResponse(measurements_list, content_type = 'application/json')
